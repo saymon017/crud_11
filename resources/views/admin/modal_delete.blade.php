@@ -12,17 +12,17 @@
 
                 <div class="modal-body">
                     <center>
-                        <h1>Are You Sure?</h1>
-                        <h6>You want to Delete the user!</h6>
+                        <h1>Estas seguro</h1>
+                        <h6>¡Quieres eliminar al usuario Aprendiz!</h6>
                     </center>
                 </div>
                 <div class="row" style="margin-bottom: 50px; text-align: center;">
                     <div class="col-sm-3"></div>
                     <div class="col-sm-3">
-                        <button type="button" class="btn btn-danger btn-modal" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-danger btn-modal" data-bs-dismiss="modal">Cancelar</button>
                     </div>
                     <div class="col-sm-3">
-                        <button type="submit" class="btn btn-success btn-modal">Delete</button>
+                        <button type="submit" class="btn btn-success btn-modal">Borrar</button>
                     </div>
                     <div class="col-sm-3"></div>
                 </div>

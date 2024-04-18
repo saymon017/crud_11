@@ -7,22 +7,22 @@
             <form class="form1" method="post" action="@if (isset($edit->id)) {{ route('user.update', ['id' => $edit->id]) }}@else{{ route('user.store') }} @endif" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group col-md-12 mb-3">
-                    <label for="">Your Name</label>
-                    <input class="form-control" type="text" name="name" placeholder="Enter Your Name" value="@if (isset($edit->id)) {{ $edit->name }}@else {{ old('name') }} @endif">
+                    <label for="">Nombre</label>
+                    <input class="form-control" type="text" name="name" placeholder="Introduzca su nombre" value="@if (isset($edit->id)) {{ $edit->name }}@else {{ old('name') }} @endif">
                     @error('name')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
 
                 <div class="form-group col-md-12 mb-3">
-                    <label for="">Your Email</label>
-                    <input class="form-control" type="text" name="email" placeholder="Enter Your Email" value="@if (isset($edit->id)) {{ $edit->email }}@else {{ old('email') }} @endif">
+                    <label for="">Correo</label>
+                    <input class="form-control" type="text" name="email" placeholder="Introduce tu correo electrónico" value="@if (isset($edit->id)) {{ $edit->email }}@else {{ old('email') }} @endif">
                     @error('email')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="form-group col-md-12 mb-5">
-                    <label for="">Photo</label>
+                    <label for="">Foto</label>
                     <div class="avatar-upload">
                         <div>
                             <input type='file' id="imageUpload" name="photo" accept=".png, .jpg, .jpeg" onchange="previewImage(this)" />
@@ -37,8 +37,8 @@
                     @enderror
                 </div>
 
-                <input type="submit" class="btn btn-primary" value="Submit">
-                <a class="btn btn-danger" href="{{ route('user.index') }}">Cancel</a>
+                <input type="submit" class="btn btn-primary" value="enviar">
+                <a class="btn btn-danger" href="{{ route('user.index') }}">Cancelar</a>
             </form>
         </div>
     </div>

@@ -2,10 +2,10 @@
 @section('main-content')
 <div class="container">
     <h2>
-        Laravel 11 CRUD with upload image
+        Crud Laravel 11 
     </h2>
     <div class="text-end mb-5">
-        <a href="{{ route('user.create') }}" class="btn btn-primary">Add New User</a>
+        <a href="{{ route('user.create') }}" class="btn btn-primary">Agregar nuevo aprendiz</a>
     </div>
     @if (session('success'))
     <div class="alert alert-success">
@@ -22,10 +22,10 @@
         <table class="table table-hover">
             <thead class="table-primary">
                 <th>#</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Photo</th>
-                <th>Action</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Foto</th>
+                <th>Opciones</th>
             </thead>
             <tbody>
                 @forelse($users as $index => $row)
@@ -40,13 +40,13 @@
                         </div>
                     </td>
                     <td>
-                        <a href={{ route('user.edit', ['id' => $row->id]) }} class="btn btn-primary"> Edit</a>
-                        <button class="btn btn-danger" onClick="deleteFunction('{{ $row->id }}')">Delete</button>
+                        <a href={{ route('user.edit', ['id' => $row->id]) }} class="btn btn-primary"> Editar</a>
+                        <button class="btn btn-danger" onClick="deleteFunction('{{ $row->id }}')">Eliminar</button>
                     </td>
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="5">No Users Found</td>
+                    <td colspan="5">No se encontraron aprendices registrados</td>
                 </tr>
                 @endforelse
             </tbody>
@@ -81,4 +81,4 @@
         background-position: center;
     }
 </style>
-U
+

@@ -23,7 +23,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $title = "Add New User";
+        $title = "Agregar nuevo aprendiz";
         return view('admin.add_edit_user', compact('title'));
     }
 
@@ -56,7 +56,7 @@ class UserController extends Controller
         }
 
         $result = $insert->save();
-        Session::flash('success', 'User registered successfully');
+        Session::flash('success', 'aprendiz registrado exitosamente');
         return redirect()->route('user.index');
     }
 
@@ -73,7 +73,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $title = "Update User";
+        $title = "Actualizar aprendiz";
         $edit = User::findOrFail($id);
         return view('admin.add_edit_user', compact('edit', 'title'));
     }
@@ -99,7 +99,7 @@ class UserController extends Controller
             $file = $request->file('photo');
             $file_name = time() . $file->getClientOriginalName();
             $file->move($filePath, $file_name);
-            // delete old photo
+            // eliminar foto vieja
             if (!is_null($update->photo)) {
                 $oldImage = public_path('uploads/' . $update->photo);
                 if (File::exists($oldImage)) {
@@ -110,7 +110,7 @@ class UserController extends Controller
         }
 
         $result = $update->save();
-        Session::flash('success', 'User updated successfully');
+        Session::flash('success', 'Aprendiz actualizado con éxito');
         return redirect()->route('user.index');
     }
 
@@ -121,14 +121,14 @@ class UserController extends Controller
     {
         $userData = User::findOrFail($request->user_id);
         $userData->delete();
-        // delete photo if exists
+        // eliminar foto si existe
         if (!is_null($userData->photo)) {
             $photo = public_path('uploads/' . $userData->photo);
             if (File::exists($photo)) {
                 unlink($photo);
             }
         }
-        Session::flash('success', 'User deleted successfully');
+        Session::flash('success', 'Aprendiz eliminado exitosamente');
         return redirect()->route('user.index');
     }
 }
