@@ -4,16 +4,11 @@
             <form action="{{ route('user.delete') }}" method="post">
                 {{ csrf_field() }}
                 <input type="hidden" name="user_id" id="delete_id">
-                <div>
-                    <center>
-                        <h1>!</h1>
-                    </center>
-                </div>
 
                 <div class="modal-body">
                     <center>
-                        <h1>Estas seguro</h1>
-                        <h6>¡Quieres eliminar al usuario Aprendiz!</h6>
+                        <h1>¿Eliminar Aprendiz?</h1>
+                        <h6>¡Se perderan los datos del aprendiz!</h6>
                     </center>
                 </div>
                 <div class="row" style="margin-bottom: 50px; text-align: center;">
