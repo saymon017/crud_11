@@ -8,7 +8,7 @@
                 @csrf
                 <div class="form-group col-md-12 mb-3">
                     <label for="">Nombre</label>
-                    <input class="form-control" type="text" name="name" placeholder="Introduzca su nombre" value="@if (isset($edit->id)) {{ $edit->name }}@else {{ old('name') }} @endif">
+                    <input class="form-control" type="text" name="name" placeholder="Ingresa tu nombre" value="@if (isset($edit->id)) {{ $edit->name }}@else {{ old('name') }} @endif">
                     @error('name')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
@@ -16,7 +16,7 @@
 
                 <div class="form-group col-md-12 mb-3">
                     <label for="">Correo</label>
-                    <input class="form-control" type="text" name="email" placeholder="Introduce tu correo electrónico" value="@if (isset($edit->id)) {{ $edit->email }}@else {{ old('email') }} @endif">
+                    <input class="form-control" type="text" name="email" placeholder="Ingresa tu correo electrónico" value="@if (isset($edit->id)) {{ $edit->email }}@else {{ old('email') }} @endif">
                     @error('email')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
